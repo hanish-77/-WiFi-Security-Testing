@@ -1,0 +1,29 @@
+Files:
+wifite.md: Overview and commands for Wifite.
+
+# Wifite
+
+Wifite is a Python-based tool for automating wireless network audits.
+
+## Commands
+1. Start monitor mode:
+    ```bash
+    sudo airmon-ng start wlan0
+    ```
+2. Run Wifite:
+    ```bash
+    sudo wifite
+    ```
+3. Select a target network and capture the handshake.
+
+## Notes
+- Handshake files are saved as `.cap` files, used for cracking passwords.
+aircrack-ng.md: Explain Aircrack-ng for cracking handshakes.
+
+# Aircrack-ng
+
+Aircrack-ng is used to crack WPA/WPA2 passwords from captured handshakes.
+
+## Command
+```bash
+sudo aircrack-ng -w /usr/share/wordlists/rockyou.txt -b <AP_MAC> <handshake-file>
